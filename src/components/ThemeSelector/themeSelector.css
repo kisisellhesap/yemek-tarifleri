@@ -1,0 +1,23 @@
+.theme-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 1rem;
+}
+
+.theme-links {}
+
+.theme-links span {
+    width: 20px;
+    height: 20px;
+    margin-left: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.mode-toggle {
+    user-select: none;
+    cursor: pointer;
+}

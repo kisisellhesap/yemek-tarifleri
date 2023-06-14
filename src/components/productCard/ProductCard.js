@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 function ProductCard({ tarif }) {
+
+
+
+    const { color } = useContext(ThemeContext);
 
     return (
 
@@ -13,7 +18,7 @@ function ProductCard({ tarif }) {
                 <div className="card-body">
                     <h5 className="card-title">{tarif.baslik}</h5>
                     <p className="card-text">{tarif.aciklama}</p>
-                    <Link to={`/tarifler/${tarif.id}`} className="btn btn-outline-primary">Tarifi İncele</Link>
+                    <Link to={`/tarifler/${tarif.id}`} className={`btn btn-outline-${color}`}>Tarifi İncele</Link>
                 </div>
             </div>
         </div >

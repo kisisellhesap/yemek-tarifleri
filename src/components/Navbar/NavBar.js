@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 function NavBar() {
 
@@ -11,8 +12,10 @@ function NavBar() {
         navigate(`/search?q=${search}`)
     }
 
+    const { color } = useContext(ThemeContext);
+
     return (
-        <nav className="navbar  bg-body-tertiary bg-primary">
+        <nav className={`navbar  bg-body-tertiary bg-${color}`}>
             <div className="container">
                 <Link to="/" className="navbar-brand">Yemek Tarifleri</Link>
                 <form onSubmit={handleSubmit} className="" role="search">
